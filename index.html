@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071426">
+  <title>TypeBoost — Type Faster, Achieve More</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="TypeBoost home">
+        <span class="brand-mark">ϟ</span><span><strong>Type<span>Boost</span></strong><small>Type Faster · Achieve More</small></span>
+      </a>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-link active" data-view="home"><span>⌂</span> Home</button>
+        <button class="nav-link" data-view="typing"><span>⌨</span> Typing Test</button>
+        <button class="nav-link" data-view="lessons"><span>◎</span> Finger Lessons</button>
+        <button class="nav-link" data-view="stats"><span>▥</span> My Progress</button>
+        <button class="nav-link" data-view="achievements"><span>♜</span> Achievements</button>
+      </nav>
+      <div class="sidebar-tip">
+        <div class="tip-rocket">🚀</div>
+        <h3>Small steps.<br>Big progress.</h3>
+        <p>Practice a little every day and watch your skills grow.</p>
+        <div class="tip-line"></div>
+      </div>
+      <div class="creator-credit"><span class="creator-mark">A</span><span><small>DESIGNED & BUILT BY</small><strong>ANMOL</strong></span></div>
+      <div class="sidebar-bottom"><span class="status-dot"></span> Your progress is saved on this device</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong id="pageName">Home</strong></div>
+        <div class="top-actions">
+          <div class="date-chip" id="todayLabel"></div>
+          <div class="avatar" id="avatar">A</div>
+          <span class="user-label" id="userLabel">Learner</span>
+          <button class="icon-btn" id="nameButton" title="Change your name" aria-label="Change your name">⚙</button>
+        </div>
+      </header>
+
+      <section class="view active" id="view-home">
+        <div class="welcome-banner">
+          <div class="welcome-copy">
+            <div class="eyebrow"><span class="status-dot"></span> YOUR PERSONAL TYPING SPACE</div>
+            <h1>Welcome back, <span id="welcomeName">Learner</span>!</h1>
+            <p>Every keystroke takes you one step closer to your goal.</p>
+            <div class="banner-tags"><span>⚡ Type faster</span><span>◈ Build focus</span><span>↗ Track progress</span></div>
+            <button class="primary-btn" data-go="typing">Start practising <span>→</span></button>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="hero-keyboard"><span>Q</span><span>W</span><span>E</span><span>R</span><span>T</span><span>Y</span><span>U</span><span>I</span><span>O</span><span>P</span><span>⌘</span><span>⌨</span></div>
+            <div class="speed-orb"><strong id="heroSpeed">0</strong><small>WPM</small></div>
+            <div class="hero-spark">✦</div>
+          </div>
+        </div>
+
+        <div class="section-heading"><div><h2>Your overview</h2><p>A snapshot of your typing journey</p></div><span class="subtle-label">ALL-TIME STATS</span></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon mint">ϟ</span><span class="stat-caption">BEST SPEED</span></div><div class="stat-value"><span id="bestWpm">0</span> <small>WPM</small></div><div class="stat-foot"><span class="positive">↗ Personal record</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon blue">◎</span><span class="stat-caption">BEST ACCURACY</span></div><div class="stat-value"><span id="bestAccuracy">0</span><small>%</small></div><div class="stat-foot">Aim for 95% or more</div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon violet">▤</span><span class="stat-caption">TESTS COMPLETED</span></div><div class="stat-value" id="testsCompleted">0</div><div class="stat-foot">Every test counts</div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon amber">◷</span><span class="stat-caption">PRACTICE TIME</span></div><div class="stat-value"><span id="practiceMinutes">0</span><small>min</small></div><div class="stat-foot">Time well invested</div></article>
+        </div>
+
+        <div class="home-columns">
+          <section class="panel daily-panel">
+            <div class="panel-heading"><div><h2>Daily goal</h2><p>Build a consistent habit</p></div><span class="goal-icon">✦</span></div>
+            <div class="goal-row"><div><strong id="dailyCount">0</strong><span> / 3 tests today</span></div><span class="goal-percent" id="dailyPercent">0%</span></div>
+            <div class="progress-track"><div id="dailyProgress" class="progress-fill" style="width:0%"></div></div>
+            <div class="goal-bottom"><span id="goalMessage">Complete 3 tests to reach today's goal.</span><span>🎯</span></div>
+          </section>
+          <section class="panel quick-panel">
+            <div class="panel-heading"><div><h2>Quick practice</h2><p>Pick a path and get started</p></div></div>
+            <button class="quick-item" data-go="typing"><span class="quick-icon mint">⌨</span><span><strong>60-second typing test</strong><small>Measure your current speed</small></span><b>→</b></button>
+            <button class="quick-item" data-go="lessons"><span class="quick-icon violet">◎</span><span><strong>Finger placement</strong><small>Learn which fingers to use</small></span><b>→</b></button>
+          </section>
+        </div>
+        <section class="panel recent-panel">
+          <div class="panel-heading"><div><h2>Recent sessions</h2><p>Your latest practice results</p></div><button class="text-btn" data-go="stats">View progress →</button></div>
+          <div id="recentSessions" class="recent-list"><div class="empty-state">No sessions yet. Start your first test to see your progress here.</div></div>
+        </section>
+      </section>
+
+      <section class="view" id="view-typing">
+        <div class="page-intro"><div><div class="eyebrow">PRACTICE MAKES PROGRESS</div><h1>Typing test <span class="heading-spark">✦</span></h1><p>Type the passage as accurately as you can before time runs out.</p></div><div class="test-badge">⌚ 60-second challenge</div></div>
+        <div class="test-toolbar panel">
+          <div class="difficulty-control"><span class="difficulty-label">CHOOSE DIFFICULTY</span><button class="difficulty active" data-level="beginner" aria-pressed="true">Beginner</button><button class="difficulty" data-level="medium" aria-pressed="false">Medium</button><button class="difficulty" data-level="advanced" aria-pressed="false">Advanced</button><span class="selected-level" id="selectedLevel">✓ Beginner selected</span></div>
+          <div class="toolbar-right"><label for="durationSelect">Duration</label><select id="durationSelect"><option value="60" selected>60 seconds</option><option value="30">30 seconds</option><option value="120">2 minutes</option></select><button id="soundToggle" class="sound-btn" aria-pressed="true">♫ Sound on</button></div>
+        </div>
+        <div class="live-stats">
+          <article class="live-stat"><span class="live-label">SPEED</span><div><strong id="liveWps">0.00</strong><small>WPS</small></div><p id="liveWpmSecondary">0 WPM</p></article>
+          <article class="live-stat"><span class="live-label">ACCURACY</span><div><strong id="liveAccuracy">100</strong><small>%</small></div><p><span id="liveErrors">0</span> errors</p></article>
+          <article class="live-stat"><span class="live-label">TIME LEFT</span><div><strong id="timeLeft">60</strong><small>sec</small></div><p>Stay in the zone</p></article>
+          <article class="live-stat"><span class="live-label">PROGRESS</span><div><strong id="liveProgress">0</strong><small>%</small></div><p><span id="typedCount">0</span> characters typed</p></article>
+        </div>
+        <section class="panel typing-panel">
+          <div class="typing-panel-heading"><div><span class="live-dot"></span><span id="testStatus">READY WHEN YOU ARE</span></div><span class="subtle-label">TYPE THE PASSAGE BELOW</span></div>
+          <div class="passage" id="passage" aria-label="Typing passage"></div>
+          <div class="typing-input-wrap"><textarea id="typingInput" rows="3" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="Click here and start typing when you're ready..." aria-label="Type the passage here"></textarea><div class="input-hint">Tip: Accuracy first, speed follows. <span>⌨</span></div></div>
+          <div class="test-actions"><button class="secondary-btn" id="resetTest">↻ Restart test</button><div class="test-action-right"><span id="testHint">Your timer starts with your first keystroke.</span><button class="primary-btn" id="startTest">Start test <span>→</span></button></div></div>
+          <div id="resultBox" class="result-box hidden"></div>
+        </section>
+        <section class="keyboard-panel panel"><div class="panel-heading"><div><h2>Keyboard guide</h2><p>Use the highlighted keys as a visual guide</p></div><span class="subtle-label">QWERTY LAYOUT</span></div><div class="keyboard" id="keyboard"></div><div class="finger-legend"><span><i class="finger-color left-pinky"></i>Left hand</span><span><i class="finger-color right-pinky"></i>Right hand</span><span class="legend-note">Keep your fingers near the home row</span></div></section>
+      </section>
+
+      <section class="view" id="view-lessons">
+        <div class="page-intro"><div><div class="eyebrow">BUILD GOOD HABITS</div><h1>Finger placement <span class="heading-spark">✦</span></h1><p>Learn the home row and practise using the right finger for each key.</p></div></div>
+        <div class="lesson-hero panel"><div><span class="lesson-label">LESSON 01 · BEGINNER</span><h2>Meet your home row</h2><p>Place your left fingers on A, S, D, F and your right fingers on J, K, L, semicolon. Keep both thumbs relaxed near the spacebar.</p><button class="primary-btn" id="startLesson">Practise home row <span>→</span></button></div><div class="home-row-art"><span>A</span><span>S</span><span>D</span><span class="home-key">F</span><span class="space-key">SPACE</span><span class="home-key">J</span><span>K</span><span>L</span><span>;</span></div></div>
+        <div class="section-heading"><div><h2>Learn by finger</h2><p>Each finger has a home position and a set of keys to reach</p></div></div>
+        <div class="finger-cards">
+          <article class="finger-card"><span class="finger-number">01</span><div class="finger-hand left-hand">☝</div><h3>Left pinky</h3><p>Q · A · Z and left Shift</p><span class="key-pills">Q <b>A</b> Z</span></article>
+          <article class="finger-card"><span class="finger-number">02</span><div class="finger-hand left-hand">☝</div><h3>Left ring finger</h3><p>W · S · X</p><span class="key-pills">W <b>S</b> X</span></article>
+          <article class="finger-card"><span class="finger-number">03</span><div class="finger-hand left-hand">☝</div><h3>Left middle finger</h3><p>E · D · C</p><span class="key-pills">E <b>D</b> C</span></article>
+          <article class="finger-card"><span class="finger-number">04</span><div class="finger-hand left-hand">☝</div><h3>Left index finger</h3><p>R · F · V · T · G · B</p><span class="key-pills">R <b>F</b> V T G B</span></article>
+          <article class="finger-card"><span class="finger-number">05</span><div class="finger-hand right-hand">☝</div><h3>Right index finger</h3><p>Y · H · N · U · J · M</p><span class="key-pills">Y <b>H</b> N U J M</span></article>
+          <article class="finger-card"><span class="finger-number">06</span><div class="finger-hand right-hand">☝</div><h3>Right middle finger</h3><p>I · K · comma</p><span class="key-pills">I <b>K</b> ,</span></article>
+          <article class="finger-card"><span class="finger-number">07</span><div class="finger-hand right-hand">☝</div><h3>Right ring finger</h3><p>O · L · period</p><span class="key-pills">O <b>L</b> .</span></article>
+          <article class="finger-card"><span class="finger-number">08</span><div class="finger-hand right-hand">☝</div><h3>Right pinky</h3><p>P · semicolon · slash · Enter</p><span class="key-pills">P <b>;</b> /</span></article>
+        </div>
+        <section class="panel lesson-practice"><div class="panel-heading"><div><h2>Home-row drill</h2><p>Type the pattern shown below, then check your accuracy.</p></div></div><div class="drill-pattern" id="drillPattern">asdf jkl; asdf jkl; fjfj dkdk slsl a;a;</div><input id="drillInput" class="drill-input" placeholder="Type the pattern here..." autocomplete="off" spellcheck="false"><div class="drill-footer"><span id="drillFeedback">Take your time and focus on finger placement.</span><button class="secondary-btn" id="resetDrill">Reset drill</button></div></section>
+      </section>
+
+      <section class="view" id="view-stats">
+        <div class="page-intro"><div><div class="eyebrow">YOUR IMPROVEMENT JOURNEY</div><h1>My progress <span class="heading-spark">✦</span></h1><p>Review your results and see how your practice adds up.</p></div><button class="secondary-btn" id="exportResults">↓ Export results</button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon mint">ϟ</span><span class="stat-caption">BEST SPEED</span></div><div class="stat-value"><span id="statsBestWpm">0</span><small>WPM</small></div><div class="stat-foot">Your fastest test</div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon blue">◎</span><span class="stat-caption">BEST ACCURACY</span></div><div class="stat-value"><span id="statsBestAccuracy">0</span><small>%</small></div><div class="stat-foot">Your most accurate test</div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon violet">▤</span><span class="stat-caption">TOTAL TESTS</span></div><div class="stat-value" id="statsTotalTests">0</div><div class="stat-foot">Keep building the habit</div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon amber">◷</span><span class="stat-caption">TOTAL MINUTES</span></div><div class="stat-value" id="statsMinutes">0</div><div class="stat-foot">Every minute matters</div></article>
+        </div>
+        <section class="panel chart-panel"><div class="panel-heading"><div><h2>Speed over time</h2><p>WPM from your latest sessions</p></div><span class="chart-legend"><i></i> Words per minute</span></div><div id="speedChart" class="speed-chart"><div class="empty-state">Complete a typing test to start your progress chart.</div></div></section>
+        <section class="panel"><div class="panel-heading"><div><h2>Session history</h2><p>Your latest 20 saved tests</p></div><button class="text-btn" id="clearHistory">Clear history</button></div><div id="historyList" class="history-list"><div class="empty-state">Your test history will appear here.</div></div></section>
+      </section>
+
+      <section class="view" id="view-achievements">
+        <div class="page-intro"><div><div class="eyebrow">CELEBRATE EVERY MILESTONE</div><h1>Achievements <span class="heading-spark">✦</span></h1><p>Keep practising to unlock new badges along the way.</p></div></div>
+        <section class="achievement-summary panel"><div class="achievement-big-icon">🏆</div><div><span class="subtle-label">YOUR COLLECTION</span><h2><span id="unlockedCount">0</span> of 8 badges unlocked</h2><p>Every practice session brings you closer to the next milestone.</p><div class="progress-track"><div id="achievementProgress" class="progress-fill" style="width:0%"></div></div></div></section>
+        <div id="achievementGrid" class="achievement-grid"></div>
+      </section>
+
+      <footer class="footer"><span>TypeBoost <i>·</i> Type Faster, Achieve More</span><span class="footer-credit">Designed & built   by <strong>ANMOL</strong></span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="nameDialog" class="name-dialog"><form method="dialog" id="nameForm"><div class="dialog-logo">ϟ</div><h2>What should we call you?</h2><p>Your progress stays saved in this browser on this device.</p><label for="learnerName">Your name</label><input id="learnerName" maxlength="24" placeholder="Enter your name" autocomplete="given-name"><div class="dialog-actions"><button class="primary-btn" id="saveName" value="save">Let's go <span>→</span></button></div></form></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
